@@ -5321,6 +5321,7 @@ var TProject;
             _this.selectPanel.y = 310;
             _this.selectPanel.anchor.set(0.5, 0.5);
             _this.screen2.addChild(_this.selectPanel);
+            console.log("GAME VERSION: 1.02");
             if (_this.offMenuForDebug == false) {
                 _this.screen2.y = -620;
                 var tween = game.add.tween(_this.logo).to({ alpha: 1 }, 800, Phaser.Easing.Linear.None, true, 0, 0, false);
