@@ -2014,6 +2014,7 @@ var TProject;
                 tutor.data.img1 = "tutor2_1";
                 tutor.data.img2 = "tutor2_2";
                 tutor.data.textNum = 3;
+                var tween = this.game.add.tween(clip).to({ y: -28 }, 300, Phaser.Easing.Linear.None, true, 0, -1, true);
             }
             if (type == "3") {
                 var clip = this.game.add.sprite(0, 0, "blocks", "tutor3_1");
@@ -2041,6 +2042,7 @@ var TProject;
                 tutor.data.img1 = "tutor5_1";
                 tutor.data.img2 = "tutor5_2";
                 tutor.data.textNum = 5;
+                var tween = this.game.add.tween(clip).to({ y: -34 }, 300, Phaser.Easing.Linear.None, true, 0, -1, true);
             }
             if (type == "6") {
                 var clip = this.game.add.sprite(0, 0, "blocks", "tutor6_1");
@@ -5457,6 +5459,19 @@ var TProject;
                 }
             }
         };
+        MainMenu.prototype.unlockAll = function () {
+            for (var i = 1; i < 37; i++) {
+                if (this._manager.localStorageGetNumber("level" + i) < 1) {
+                    this._manager.localStorageSetNumber("level" + i, 1);
+                    console.log("level" + i + " - unlocked");
+                }
+            }
+            this._manager.localStorageSetNumber("film1", 1);
+            this._manager.localStorageSetNumber("film2", 1);
+            this._manager.localStorageSetNumber("film3", 1);
+            this._manager.localStorageSetNumber("film4", 1);
+            this.createOrUpdateSelectButtons();
+        };
         MainMenu.prototype.inputOver = function (e) {
             if (TProject.BaseGame.isSoundOn)
                 TProject.SoundMixer.play("sound 6", TProject.BaseGame.soundVolume);
@@ -6087,8 +6102,7 @@ var TProject;
                     }
                 }
                 if (EKEY.keyCode == this.V.keyCode) {
-                    this.checkOverlapDraw = true;
-                    this.game.time.events.add(100, function (e) { _this.checkOverlapDraw = false; });
+                    this._manager.mainMenuSprite.unlockAll();
                 }
             }
             if (EKEY.keyCode == this.T.keyCode) {
