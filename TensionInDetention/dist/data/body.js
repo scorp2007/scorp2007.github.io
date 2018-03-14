@@ -2759,6 +2759,50 @@ var TProject;
             _this.hideTutorTable();
             return _this;
         }
+        GameplayUI.prototype.createMobiles = function () {
+            var _this = this;
+            this.mobLeft = this.game.add.sprite(0, 0, "menu_atlas", "mb0001");
+            this.mobLeft.x = 40;
+            this.mobLeft.y = 580;
+            this.mobLeft.anchor.set(0.5, 0.5);
+            this.addChild(this.mobLeft);
+            this.mobLeft.inputEnabled = true;
+            this.mobLeft.events.onInputDown.add(function (e) { _this._manager.player.downLeft(); });
+            this.mobLeft.events.onInputUp.add(function (e) { _this._manager.player.upLeft(); });
+            this.mobRight = this.game.add.sprite(0, 0, "menu_atlas", "mb0003");
+            this.mobRight.x = 128;
+            this.mobRight.y = 580;
+            this.mobRight.anchor.set(0.5, 0.5);
+            this.addChild(this.mobRight);
+            this.mobRight.inputEnabled = true;
+            this.mobRight.events.onInputDown.add(function (e) { _this._manager.player.downRight(); });
+            this.mobRight.events.onInputUp.add(function (e) { _this._manager.player.upRight(); });
+            this.mobUp = this.game.add.sprite(0, 0, "menu_atlas", "mb0002");
+            this.mobUp.x = 216;
+            this.mobUp.y = 580;
+            this.mobUp.anchor.set(0.5, 0.5);
+            this.addChild(this.mobUp);
+            this.mobUp.inputEnabled = true;
+            this.mobUp.events.onInputDown.add(function (e) { _this._manager.player.downUp(); });
+            this.mobUp.events.onInputUp.add(function (e) { _this._manager.player.upUp(); });
+            this.mobDown = this.game.add.sprite(0, 0, "menu_atlas", "mb0003");
+            this.mobDown.angle = 90;
+            this.mobDown.x = 304;
+            this.mobDown.y = 580;
+            this.mobDown.anchor.set(0.5, 0.5);
+            this.addChild(this.mobDown);
+            this.mobDown.inputEnabled = true;
+            this.mobDown.events.onInputDown.add(function (e) { _this._manager.player.downDown(); });
+            this.mobDown.events.onInputUp.add(function (e) { _this._manager.player.upDown(); });
+            this.mobAct = this.game.add.sprite(0, 0, "menu_atlas", "mb0005");
+            this.mobAct.x = window.innerWidth - 34 - 10;
+            this.mobAct.y = 580;
+            this.mobAct.anchor.set(0.5, 0.5);
+            this.addChild(this.mobAct);
+            this.mobAct.inputEnabled = true;
+            this.mobAct.events.onInputDown.add(function (e) { _this._manager.player.downAct(); });
+            this.mobAct.events.onInputUp.add(function (e) { _this._manager.player.upAct(); });
+        };
         GameplayUI.prototype.showTutorTable = function (type, textNum) {
             console.log("showTutorTable");
             if (TProject.BaseGame.isSoundOn)
@@ -5333,7 +5377,7 @@ var TProject;
             _this.selectPanel.y = 310;
             _this.selectPanel.anchor.set(0.5, 0.5);
             _this.screen2.addChild(_this.selectPanel);
-            console.log("GAME VERSION: 1.02");
+            console.log("GAME VERSION: 1.03");
             if (_this.offMenuForDebug == false) {
                 _this.screen2.y = -620;
                 var tween = game.add.tween(_this.logo).to({ alpha: 1 }, 800, Phaser.Easing.Linear.None, true, 0, 0, false);
@@ -6074,6 +6118,62 @@ var TProject;
             this.onWin();
             this.stateMachineManager();
         };
+        Player.prototype.downLeft = function () {
+            if (this.clip.animations.name != "golpeado") {
+                this.goingLeft = true;
+                this.goingRight = false;
+                if (this.climb) {
+                    this.goingLeft = false;
+                }
+            }
+            if (this.colitionRight) {
+                this.colitionRight = false;
+                this.x -= 1;
+            }
+        };
+        Player.prototype.downRight = function () {
+            if (this.clip.animations.name != "golpeado") {
+                this.goingRight = true;
+                this.goingLeft = false;
+                if (this.climb) {
+                    this.goingRight = false;
+                }
+            }
+            if (this.colitionLeft) {
+                this.colitionLeft = false;
+                this.x += 1;
+            }
+        };
+        Player.prototype.downUp = function () {
+            this.goingUp = true;
+        };
+        Player.prototype.downDown = function () {
+            this.goingDown = true;
+        };
+        Player.prototype.downAct = function () {
+            if (!this.actionDown) {
+                this.actionDown = true;
+                this.doAction();
+            }
+        };
+        Player.prototype.upLeft = function () {
+            this.goingLeft = false;
+        };
+        Player.prototype.upRight = function () {
+            this.goingRight = false;
+        };
+        Player.prototype.upUp = function () {
+            this.goingUp = false;
+            this.wasClimbingUp = false;
+            this.onLadder = false;
+        };
+        Player.prototype.upDown = function () {
+            this.goingDown = false;
+            this.onLadder = false;
+        };
+        Player.prototype.upAct = function () {
+            this.actionDown = false;
+        };
         Player.prototype.keyDownHandle = function (EKEY) {
             var _this = this;
             if (this._manager.gameplay == false) {
@@ -6081,42 +6181,19 @@ var TProject;
             }
             if ((!this.dead) && (!this.win)) {
                 if (EKEY.keyCode == this.leftKey.keyCode || EKEY.keyCode == this.A.keyCode) {
-                    if (this.clip.animations.name != "golpeado") {
-                        this.goingLeft = true;
-                        this.goingRight = false;
-                        if (this.climb) {
-                            this.goingLeft = false;
-                        }
-                    }
-                    if (this.colitionRight) {
-                        this.colitionRight = false;
-                        this.x -= 1;
-                    }
+                    this.downLeft();
                 }
                 else if (EKEY.keyCode == this.rightKey.keyCode || EKEY.keyCode == this.D.keyCode) {
-                    if (this.clip.animations.name != "golpeado") {
-                        this.goingRight = true;
-                        this.goingLeft = false;
-                        if (this.climb) {
-                            this.goingRight = false;
-                        }
-                    }
-                    if (this.colitionLeft) {
-                        this.colitionLeft = false;
-                        this.x += 1;
-                    }
+                    this.downRight();
                 }
                 if (EKEY.keyCode == this.upKeyVar.keyCode || EKEY.keyCode == this.W.keyCode) {
-                    this.goingUp = true;
+                    this.downUp();
                 }
                 if (EKEY.keyCode == this.downKeyVar.keyCode || EKEY.keyCode == this.S.keyCode) {
-                    this.goingDown = true;
+                    this.downDown();
                 }
                 if (EKEY.keyCode == this.SPACE.keyCode) {
-                    if (!this.actionDown) {
-                        this.actionDown = true;
-                        this.doAction();
-                    }
+                    this.downAct();
                 }
                 if (EKEY.keyCode == this.V.keyCode) {
                     this._manager.mainMenuSprite.unlockAll();
@@ -6128,22 +6205,19 @@ var TProject;
         };
         Player.prototype.keyUpHandle = function (EKEY) {
             if (EKEY.keyCode == this.leftKey.keyCode || EKEY.keyCode == this.A.keyCode) {
-                this.goingLeft = false;
+                this.upLeft();
             }
             else if (EKEY.keyCode == this.rightKey.keyCode || EKEY.keyCode == this.D.keyCode) {
-                this.goingRight = false;
+                this.upRight();
             }
             if (EKEY.keyCode == this.upKeyVar.keyCode || EKEY.keyCode == this.W.keyCode) {
-                this.goingUp = false;
-                this.wasClimbingUp = false;
-                this.onLadder = false;
+                this.upUp();
             }
             if (EKEY.keyCode == this.downKeyVar.keyCode || EKEY.keyCode == this.S.keyCode) {
-                this.goingDown = false;
-                this.onLadder = false;
+                this.upDown();
             }
             if (EKEY.keyCode == this.SPACE.keyCode) {
-                this.actionDown = false;
+                this.upAct();
             }
         };
         Player.prototype.transportBlock = function () {
@@ -7877,6 +7951,14 @@ var TProject;
             this.setTutos();
             this.InitParticles();
             this.game.stage.updateTransform();
+            if (BaseGame.firstStart == true) {
+                if (this.game.device.desktop) {
+                }
+                else {
+                    this.gameplayUI.createMobiles();
+                }
+                BaseGame.firstStart = false;
+            }
         };
         BaseGame.prototype.InitParticles = function () {
             this.particless = new TProject.Particles(this.game, this, this.group1);
@@ -8876,6 +8958,7 @@ var TProject;
                 this.dt = 0.036;
             }
         };
+        BaseGame.firstStart = true;
         BaseGame.soundVolume = 0.3;
         BaseGame.musicVolume = 0.1;
         BaseGame.isSoundOn = true;
