@@ -253,6 +253,7 @@ var TProject;
             _this.skipBtn.anchor.set(0.5, 0.5);
             _this.addChild(_this.skipBtn);
             _this.startComix(1);
+            _this.skipTimer = _this.game.time.events.add(3000, function (e) { _this.onClickEvent(); });
             _this.inputEnabled = true;
             _this.events.onInputDown.add(function (e) { _this.onClickEvent(); });
             return _this;
@@ -313,7 +314,9 @@ var TProject;
         Comix1.prototype.onClickEvent = function () {
             var _this = this;
             console.log("DIALOG CLICK " + this.act);
-            if (this.allowClick == true && this.game.input.activePointer.leftButton.isDown) {
+            if (this.allowClick == true) {
+                this.game.time.events.remove(this.skipTimer);
+                this.skipTimer = this.game.time.events.add(3000, function (e) { _this.onClickEvent(); });
                 this.allowClick = false;
                 if (this.act == 0) {
                     this.game.time.events.add(300, function (e) {
@@ -562,7 +565,8 @@ var TProject;
             _this.addChild(_this.skipBtn);
             _this.hideDialog();
             _this.inputEnabled = true;
-            _this.events.onInputDown.add(function (e) { _this.onClickEvent(e); });
+            _this.events.onInputDown.add(function (e) { _this.onClickEvent(); });
+            _this.skipTimer = _this.game.time.events.add(3000, function (e) { _this.onClickEvent(); });
             return _this;
         }
         Comix2.prototype.skipBtnClick = function () {
@@ -590,10 +594,12 @@ var TProject;
         Comix2.prototype.hideDialog = function () {
             this.c_dialog_panel.visible = false;
         };
-        Comix2.prototype.onClickEvent = function (e) {
+        Comix2.prototype.onClickEvent = function () {
             var _this = this;
             console.log("DIALOG CLICK " + this.act);
-            if (this.allowClick == true && this.game.input.activePointer.leftButton.isDown) {
+            if (this.allowClick == true) {
+                this.game.time.events.remove(this.skipTimer);
+                this.skipTimer = this.game.time.events.add(3000, function (e) { _this.onClickEvent(); });
                 this.allowClick = false;
                 if (this.act == 0) {
                     this.game.time.events.add(300, function (e) {
@@ -748,7 +754,8 @@ var TProject;
             _this.addChild(_this.skipBtn);
             _this.hideDialog();
             _this.inputEnabled = true;
-            _this.events.onInputDown.add(function (e) { _this.onClickEvent(e); });
+            _this.events.onInputDown.add(function (e) { _this.onClickEvent(); });
+            _this.skipTimer = _this.game.time.events.add(3000, function (e) { _this.onClickEvent(); });
             return _this;
         }
         Comix3.prototype.skipBtnClick = function () {
@@ -777,10 +784,12 @@ var TProject;
         Comix3.prototype.hideDialog = function () {
             this.c_dialog_panel.visible = false;
         };
-        Comix3.prototype.onClickEvent = function (e) {
+        Comix3.prototype.onClickEvent = function () {
             var _this = this;
             console.log("DIALOG CLICK " + this.act);
-            if (this.allowClick == true && this.game.input.activePointer.leftButton.isDown) {
+            if (this.allowClick == true) {
+                this.game.time.events.remove(this.skipTimer);
+                this.skipTimer = this.game.time.events.add(3000, function (e) { _this.onClickEvent(); });
                 this.allowClick = false;
                 if (this.act == 0) {
                     this.game.time.events.add(300, function (e) {
@@ -984,7 +993,8 @@ var TProject;
             _this.addChild(_this.skipBtn);
             _this.hideDialog();
             _this.inputEnabled = true;
-            _this.events.onInputDown.add(function (e) { _this.onClickEvent(e); });
+            _this.events.onInputDown.add(function (e) { _this.onClickEvent(); });
+            _this.skipTimer = _this.game.time.events.add(3000, function (e) { _this.onClickEvent(); });
             return _this;
         }
         Comix4.prototype.skipBtnClick = function () {
@@ -1022,11 +1032,13 @@ var TProject;
         Comix4.prototype.hideDialog = function () {
             this.c_dialog_panel.visible = false;
         };
-        Comix4.prototype.onClickEvent = function (e) {
+        Comix4.prototype.onClickEvent = function () {
             var _this = this;
             this.shadow.loadTexture(this.bmd);
             console.log("DIALOG CLICK " + this.act);
-            if (this.allowClick == true && this.game.input.activePointer.leftButton.isDown) {
+            if (this.allowClick == true) {
+                this.game.time.events.remove(this.skipTimer);
+                this.skipTimer = this.game.time.events.add(3000, function (e) { _this.onClickEvent(); });
                 this.allowClick = false;
                 if (this.act == 0) {
                     this.game.time.events.add(300, function (e) {
@@ -5974,12 +5986,16 @@ var TProject;
             }
             _this.down1 = _this.game.add.sprite(-6, 1.25, "darwin", "hit_point");
             _this.down1.anchor.set(0.5);
+            _this.down1.width = 3;
+            _this.down1.height = 3;
             _this.addChild(_this.down1);
             if (_this.visibleHitBox == false) {
                 _this.down1.alpha = 0;
             }
             _this.down2 = _this.game.add.sprite(6, 1.25, "darwin", "hit_point");
             _this.down2.anchor.set(0.5);
+            _this.down2.width = 3;
+            _this.down2.height = 3;
             _this.addChild(_this.down2);
             if (_this.visibleHitBox == false) {
                 _this.down2.alpha = 0;
@@ -7140,6 +7156,7 @@ var TProject;
                             this.moveEnabled = true;
                             this.clip.alpha = 1;
                             this.getOutDejavu();
+                            this.changeState("stay");
                         }, this);
                         this.actionEnabled = false;
                         this.moveEnabled = false;
@@ -7934,8 +7951,8 @@ var TProject;
             this.group1.add(this.wallGroup);
             this.group1.add(this.arraySpike);
             this.group1.add(this.arrayStar);
-            this.group1.add(this.playerGroup);
             this.group1.add(this.arrayLadder);
+            this.group1.add(this.playerGroup);
             this.group1.add(this.arrayPit);
             this.group1.add(this.arraySemisolid);
             this.group1.add(this.arrayTeleport);
