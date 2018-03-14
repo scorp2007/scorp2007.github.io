@@ -7161,9 +7161,9 @@ var TProject;
                             this.changeState("hit");
                             if (this.blockGrabbed != null) {
                                 this.blockGrabbed.data.speedX = -this.blockGrabbed.data.spdX;
-                                this.blockGrabbed.data.bounceLeft = true;
                                 this.blockGrabbed.data.grabbed = false;
                                 this.blockGrabbed.visible = true;
+                                this.blockGrabbed.data.bounceLeft = true;
                                 this.blockGrabbed = null;
                             }
                         }
@@ -7178,9 +7178,9 @@ var TProject;
                             this.changeState("hit");
                             if (this.blockGrabbed != null) {
                                 this.blockGrabbed.data.speedX = this.blockGrabbed.data.spdX;
-                                this.blockGrabbed.data.bounceRight = true;
                                 this.blockGrabbed.data.grabbed = false;
                                 this.blockGrabbed.visible = true;
+                                this.blockGrabbed.data.bounceRight = true;
                                 this.blockGrabbed = null;
                             }
                         }
@@ -8569,7 +8569,6 @@ var TProject;
                     if (myBox.data.speedX >= 0) {
                         myBox.data.speedX = 0;
                         myBox.bounceLeft = false;
-                        this.fixBoxBouncing(myBox, -1);
                     }
                 }
                 if (this.arraySemisolid.children[iter].data.bounceRight) {
@@ -8579,7 +8578,6 @@ var TProject;
                     if (myBox.data.speedX <= 0) {
                         myBox.data.speedX = 0;
                         myBox.bounceRight = false;
-                        this.fixBoxBouncing(myBox, 1);
                     }
                 }
             }
