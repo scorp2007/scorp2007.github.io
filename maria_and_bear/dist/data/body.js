@@ -20,6 +20,7 @@ var TProject;
             if (y === void 0) { y = 0; }
             if (z === void 0) { z = 1; }
             this._2dProjection = new TProject.Point();
+            this._originalY = y;
             this.set(x, y, z);
         }
         Point3D.prototype.rotate = function (rotX, rotY) {
@@ -36,8 +37,11 @@ var TProject;
             this.project();
         };
         Point3D.prototype.project = function () {
-            this._2dProjection.x = TProject.Test.WORLD.cx + this.x;
-            this._2dProjection.y = TProject.Test.WORLD.cy + this.z;
+            var perspective = (this.y - this._originalY) / (TProject.Test.MAX_DEPTH * 2);
+            var psCoef = 0.6;
+            var r = 1 + perspective * psCoef;
+            this._2dProjection.x = TProject.Test.WORLD.cx + this.x * r;
+            this._2dProjection.y = TProject.Test.WORLD.cy + this.z * r;
         };
         Point3D.prototype.set = function (x, y, z) {
             this._x = x;
@@ -2103,18 +2107,14 @@ var TProject;
             var _this = this;
             Test.WORLD.cx = this.game.width * 0.5;
             Test.WORLD.cy = this.game.height * 0.5;
+            Test.WORLD.cz = Test.MAX_DEPTH;
             this.json_var = this.game.cache.getJSON("lev1");
             this.lev1ar = [];
             for (var i = 0; i < this.json_var.length; i++) {
-                this.lev1ar.push(new TProject.Segment(this.json_var[i]["x1"], this.game.rnd.integerInRange(-200, 200), this.json_var[i]["y1"], this.json_var[i]["x2"], this.game.rnd.integerInRange(-200, 200), this.json_var[i]["y2"]));
+                this.lev1ar.push(new TProject.Segment(this.json_var[i]["x1"], this.game.rnd.integerInRange(-Test.MAX_DEPTH, Test.MAX_DEPTH), this.json_var[i]["y1"], this.json_var[i]["x2"], this.game.rnd.integerInRange(-Test.MAX_DEPTH, Test.MAX_DEPTH), this.json_var[i]["y2"]));
             }
             this._g = this.add.graphics(0, 0);
-            this._testSegment = [
-                new TProject.Segment(-50, 100, -50, 50, 1, -50),
-                new TProject.Segment(50, 1, -50, 50, 100, 50),
-                new TProject.Segment(50, -100, 50, -50, 1, 50),
-                new TProject.Segment(-50, 1, 50, -50, 1, -50)
-            ];
+            this.newLevel();
             this._nodePoints = [
                 this._testSegment[0].begin, this._testSegment[3].end
             ];
@@ -2185,6 +2185,7 @@ var TProject;
             rotX: -Math.PI / 720,
             rotY: Math.PI / 720
         };
+        Test.MAX_DEPTH = 200;
         return Test;
     }(Phaser.State));
     TProject.Test = Test;
