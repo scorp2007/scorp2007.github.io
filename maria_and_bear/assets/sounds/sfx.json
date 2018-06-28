@@ -1,0 +1,255 @@
+{
+  "resources": [
+    "..\\..\\assets\\sounds\\sfx.ogg",
+    "..\\..\\assets\\sounds\\sfx.m4a",
+    "..\\..\\assets\\sounds\\sfx.mp3",
+    "..\\..\\assets\\sounds\\sfx.ac3"
+  ],
+  "spritemap": {
+    "ambientH": {
+      "start": 0,
+      "end": 15.549251700680273,
+      "loop": false
+    },
+    "ambientT": {
+      "start": 17,
+      "end": 32.54925170068027,
+      "loop": false
+    },
+    "bad": {
+      "start": 34,
+      "end": 37.85861678004535,
+      "loop": false
+    },
+    "beepEnd": {
+      "start": 39,
+      "end": 39.05578231292517,
+      "loop": false
+    },
+    "beepStart": {
+      "start": 41,
+      "end": 41.03829931972789,
+      "loop": false
+    },
+    "Click": {
+      "start": 43,
+      "end": 43.193492063492066,
+      "loop": false
+    },
+    "endGameHorn": {
+      "start": 45,
+      "end": 47.61224489795919,
+      "loop": false
+    },
+    "goolkeeperDef": {
+      "start": 49,
+      "end": 49.058344671201816,
+      "loop": false
+    },
+    "happy_1": {
+      "start": 51,
+      "end": 54.836938775510205,
+      "loop": false
+    },
+    "happy_2": {
+      "start": 56,
+      "end": 60.501995464852605,
+      "loop": false
+    },
+    "hitGame_1": {
+      "start": 62,
+      "end": 63.2837641723356,
+      "loop": false
+    },
+    "hitGame_2": {
+      "start": 65,
+      "end": 65.71229024943311,
+      "loop": false
+    },
+    "hitGame_3": {
+      "start": 67,
+      "end": 68.76065759637189,
+      "loop": false
+    },
+    "hitGame_4": {
+      "start": 70,
+      "end": 71.38918367346939,
+      "loop": false
+    },
+    "hitGame_Body1": {
+      "start": 73,
+      "end": 74.68009070294785,
+      "loop": false
+    },
+    "hitGame_Body2": {
+      "start": 76,
+      "end": 77.16546485260771,
+      "loop": false
+    },
+    "MedalHit": {
+      "start": 79,
+      "end": 79.96619047619048,
+      "loop": false
+    },
+    "OpenPanel": {
+      "start": 81,
+      "end": 81.65569160997732,
+      "loop": false
+    },
+    "ouch_1": {
+      "start": 83,
+      "end": 83.33625850340135,
+      "loop": false
+    },
+    "ouch_2": {
+      "start": 85,
+      "end": 85.36684807256236,
+      "loop": false
+    },
+    "Over": {
+      "start": 87,
+      "end": 87.02365079365079,
+      "loop": false
+    },
+    "overtimeSound": {
+      "start": 89,
+      "end": 92.89122448979592,
+      "loop": false
+    },
+    "overtimeSoundEnd": {
+      "start": 94,
+      "end": 96.76891156462585,
+      "loop": false
+    },
+    "Robot_Theme": {
+      "start": 98,
+      "end": 211.67870748299322,
+      "loop": false
+    },
+    "setkaHit_1": {
+      "start": 213,
+      "end": 213.37036281179138,
+      "loop": false
+    },
+    "setkaHit_2": {
+      "start": 215,
+      "end": 215.3181179138322,
+      "loop": false
+    },
+    "setkaHit_3": {
+      "start": 217,
+      "end": 217.38662131519274,
+      "loop": false
+    },
+    "setkaHit_4": {
+      "start": 219,
+      "end": 219.35061224489795,
+      "loop": false
+    },
+    "shaiba_hit_bordure_duel_game": {
+      "start": 221,
+      "end": 221.50666666666666,
+      "loop": false
+    },
+    "shaiba_hit_strongHD1": {
+      "start": 223,
+      "end": 224.57698412698412,
+      "loop": false
+    },
+    "shaiba_hit_strongHD2": {
+      "start": 226,
+      "end": 227.04419501133788,
+      "loop": false
+    },
+    "shaiba_hit_strongHD3": {
+      "start": 229,
+      "end": 230.45242630385488,
+      "loop": false
+    },
+    "shaiba_hit_strongHD4": {
+      "start": 232,
+      "end": 233.0529931972789,
+      "loop": false
+    },
+    "shaibaFall_1": {
+      "start": 235,
+      "end": 235.62292517006802,
+      "loop": false
+    },
+    "shaibaFall_2": {
+      "start": 237,
+      "end": 237.71160997732426,
+      "loop": false
+    },
+    "shaibaFall_3": {
+      "start": 239,
+      "end": 239.54845804988662,
+      "loop": false
+    },
+    "shaibaFall_4": {
+      "start": 241,
+      "end": 241.5051247165533,
+      "loop": false
+    },
+    "shaibaFall_5": {
+      "start": 243,
+      "end": 243.5421768707483,
+      "loop": false
+    },
+    "SnowBallVoosh_1": {
+      "start": 245,
+      "end": 245.13272108843537,
+      "loop": false
+    },
+    "SnowBallVoosh_2": {
+      "start": 247,
+      "end": 247.13734693877552,
+      "loop": false
+    },
+    "SnowBallVoosh_3": {
+      "start": 249,
+      "end": 249.14541950113377,
+      "loop": false
+    },
+    "SnowBallVoosh_4": {
+      "start": 251,
+      "end": 251.1419501133787,
+      "loop": false
+    },
+    "swishSnd": {
+      "start": 253,
+      "end": 253.17208616780044,
+      "loop": false
+    },
+    "Whistle": {
+      "start": 255,
+      "end": 256.3322448979592,
+      "loop": false
+    },
+    "bonus": {
+      "start": 258,
+      "end": 258.6857596371882,
+      "loop": false
+    },
+    "interface_Main_Metal_small_01": {
+      "start": 260,
+      "end": 264.0000680272109,
+      "loop": false
+    },
+    "Stars_01": {
+      "start": 266,
+      "end": 269.00004535147394,
+      "loop": false
+    },
+    "Stars_02": {
+      "start": 271,
+      "end": 274.00004535147394,
+      "loop": false
+    },
+    "Stars_03": {
+      "start": 276,
+      "end": 279.00004535147394,
+      "loop": false
+    }
+  }
+}

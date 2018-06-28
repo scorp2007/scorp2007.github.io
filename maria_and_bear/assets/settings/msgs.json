@@ -1,0 +1,284 @@
+{
+    "ru": {
+        "game-training": "Тренировка",
+        "game-championship": "Чемпионат",
+		"game-duel": "Дуэль",
+		
+		"one-player": "Один игрок",
+		"play-with-friend": "Играть с другом",
+        "how-to-play": "Как играть",
+        "start": "Начать!",
+
+		"so-close": "Почти!",
+        "over-time": "Овер\nтайм",
+        "bonus": "Бонус!",
+        "goal": "Гол!",
+		
+		"points": "Очки",
+        "result": "Результат:",
+        
+        "chose-players": "Выбери режим",
+		
+        "shareBeginShaiba": "Мне удалось забить ",
+        "shareScoreShaibaA": " шайбу",
+        "shareScoreShaibaB": " шайбы",
+        "shareScoreShaibaC": " шайб",
+        "shareEndShaiba": ", а сколько сможешь ты?",
+		"shareBadScoreShaiba": "Мне не удалось забить ни одного мяча. Может у тебя получится лучше?",
+		
+		"shareBeginMedal": "Мне удалось собрать ",
+        "shareScoreMedalA": " медаль",
+        "shareScoreMedalB": " медали",
+        "shareScoreMedalC": " медалей",
+        "shareEndMedal": ", а сколько сможешь ты?",
+        "shareBadScoreMedal": "Мне не удалось получить ни одной медали. Может у тебя получится лучше?"
+
+    },
+
+    "en": {
+        "game-training": "Practice",
+        "game-championship": "Championship",
+		"game-duel": "Duel",
+		
+		"one-player": "One player",
+		"play-with-friend": "Play with friend",
+        "how-to-play": "How to Play:",
+        "start": "Start!",
+
+		"so-close": "Close score!",
+        "over-time": "Over\ntime",
+        "bonus": "Bonus!",
+        "goal": "Goal!",
+		
+		"points": "Points",
+        "result": "Result:",
+        
+        "chose-players": "",
+		
+        "shareBeginShaiba": "I’ve scored ",
+        "shareScoreShaibaA": " puck",
+        "shareScoreShaibaB": " pucks",
+        "shareScoreShaibaC": " pucks",
+        "shareEndShaiba": ". How many can you score?",
+		"shareBadScoreShaiba": "I couldn’t score a single puck. Maybe you can do better?",
+		
+		"shareBeginMedal": "I’ve won ",
+        "shareScoreMedalA": " medal",
+        "shareScoreMedalB": " medals",
+        "shareScoreMedalC": " medals",
+        "shareEndMedal": ". How many can you get?",
+        "shareBadScoreMedal": "I couldn’t win a single medal. Maybe you can do better?"
+    },
+
+    "de": {
+        "game-training": "Training",
+        "game-championship": "Meisterschaft",
+		"game-duel": "Duell",
+		
+		"one-player": "Ein spieler",
+		"play-with-friend": "Spiel mit freund",
+        "how-to-play": "Spielanleitung:",
+        "start": "Anfang!",
+
+		"so-close": "Knapper punkt!",
+        "over-time": "Verlängerung",
+        "bonus": "Bonus!",
+        "goal": "Tor!",
+		
+		"points": "Punkte",
+        "result": "Ergebnis:",
+        
+        "chose-players": "",
+		
+        "shareBeginShaiba": "Ich habe ",
+        "shareScoreShaibaA": " puck",
+        "shareScoreShaibaB": " pucks",
+        "shareScoreShaibaC": " pucks",
+        "shareEndShaiba": ". Wie viele kannst du treffen?",
+		"shareBadScoreShaiba": "Ich konnte keinen einzigen puck treffen. Vielleicht kannst du es besser machen?",
+		
+		"shareBeginMedal": "Ich habe ",
+        "shareScoreMedalA": " medaille",
+        "shareScoreMedalB": " medaillen",
+        "shareScoreMedalC": " medaillen",
+        "shareEndMedal": " gewonnen. Wie viele kannst du bekommen?",
+        "shareBadScoreMedal": "Ich konnte keine einzige Medaille gewinnen. Vielleicht kannst du es besser machen?"
+    },
+
+    "fr": {
+        "game-training": "Entraînement",
+        "game-championship": "Championnat",
+		"game-duel": "Duel",
+		
+		"one-player": "Un joueur",
+		"play-with-friend": "Jouez avec un ami",
+        "how-to-play": "Comment jouer:",
+        "start": "Commencez!",
+
+		"so-close": "Score serré !",
+        "over-time": "Au fil du\ntemps",
+        "bonus": "Prime!",
+        "goal": "But!",
+		
+		"points": "Points",
+        "result": "Résultat:",
+        
+        "chose-players": "",
+		
+        "shareBeginShaiba": "J'ai marqué ",
+        "shareScoreShaibaA": " palets",
+        "shareScoreShaibaB": " palets",
+        "shareScoreShaibaC": " palets",
+        "shareEndShaiba": ". Combien pouvez-vous marquer ?",
+		"shareBadScoreShaiba": "Je n'ai pu marquer un seul palet. Peut-être pouvez-vous faire mieux ?",
+		
+		"shareBeginMedal": "J'ai gagné ",
+        "shareScoreMedalA": " médaille",
+        "shareScoreMedalB": " médailles",
+        "shareScoreMedalC": " médailles",
+        "shareEndMedal": ". Combien pouvez-vous en obtenir?",
+        "shareBadScoreMedal": "Je n'ai pu gagner une seule médaille. Peut-être pouvez-vous faire mieux ?"
+    },
+
+    "it": {
+        "game-training": "Pratica",
+        "game-championship": "Campionato",
+		"game-duel": "Duello",
+		
+		"one-player": "Un giocatore",
+		"play-with-friend": "Gioca con gli amici",
+        "how-to-play": "Come giocare:",
+        "start": "Inizio!",
+
+		"so-close": "Hai quasi segnato!",
+		"over-time": "Tempi\nsupplementari",
+		
+		"points": "Punteggio",
+        "result": "Risultato:",
+        "bonus": "Bonus!",
+        "goal": "Goal!",
+
+        "chose-players": "",
+		
+        "shareBeginShaiba": "Ho segnato ",
+        "shareScoreShaibaA": " disco",
+        "shareScoreShaibaB": " dischi",
+        "shareScoreShaibaC": " dischi",
+        "shareEndShaiba": ". Quante ne riuscirai a segnare tu?",
+		"shareBadScoreShaiba": "Non sono riuscito a segnare un solo disco. Ma forse potresti fare di meglio?",
+		
+		"shareBeginMedal": "Ho vinto ",
+        "shareScoreMedalA": " medaglia",
+        "shareScoreMedalB": " medaglie",
+        "shareScoreMedalC": " medaglie",
+        "shareEndMedal": ". Quante ne riuscirai a vincere tu?",
+        "shareBadScoreMedal": "Non sono riuscito a vincere nemmeno una medaglia. Forse potresti fare di meglio?"
+    },
+
+    "pt": {
+        "game-training": "Prática",
+        "game-championship": "Campeonato",
+		"game-duel": "Duelo",
+		
+		"one-player": "Um jogador",
+		"play-with-friend": "Jogar com amigos",
+        "how-to-play": "Como jogar:",
+        "start": "Começo!",
+
+		"so-close": "Quase marcou!",
+		"over-time": "Prorrogação",
+		
+		"points": "Pontos",
+        "result": "Resultado:",
+        "bonus": "Bônus!",
+        "goal": "Gol!",
+
+        "chose-players": "",
+		
+        "shareBeginShaiba": "Eu pontuei ",
+        "shareScoreShaibaA": " disco",
+        "shareScoreShaibaB": " discos",
+        "shareScoreShaibaC": " discos",
+        "shareEndShaiba": ". Quantos VOCÊ consegue pontuar?",
+		"shareBadScoreShaiba": "Não consegui pontuar nenhum disco. Você consegue fazer melhor?",
+		
+		"shareBeginMedal": "Eu ganhei ",
+        "shareScoreMedalA": " medalha",
+        "shareScoreMedalB": " medalhas",
+        "shareScoreMedalC": " medalhas",
+        "shareEndMedal": ". Quantas VOCÊ consegue ganhar?",
+        "shareBadScoreMedal": "Não consegui ganhar nenhuma medalha. Você consegue fazer melhor?"
+    },
+
+    "es": {
+        "game-training": "Practica",
+        "game-championship": "Campeonato",
+		"game-duel": "Duelo",
+		
+		"one-player": "Un jugador",
+		"play-with-friend": "Jugar con amigos",
+        "how-to-play": "Como Jugar:",
+        "start": "Comienzo!",
+
+		"so-close": "¡Puntaje cercano! ",
+		"over-time": "Sobre\ntiempo",
+		
+		"points": "Puntos",
+        "result": "Resultado:",
+        "bonus": "¡Prima!",
+        "goal": "¡Gol!",
+
+        "chose-players": "",
+		
+        "shareBeginShaiba": "He anotado ",
+        "shareScoreShaibaA": " disco",
+        "shareScoreShaibaB": " discos",
+        "shareScoreShaibaC": " discos",
+        "shareEndShaiba": ". ¿Cuántas puedes anotar tú?",
+		"shareBadScoreShaiba": "No pude anotar ni un disco. ¿Tal vez puedas hacerlo mejor?",
+		
+		"shareBeginMedal": "He ganado ",
+        "shareScoreMedalA": " medalla",
+        "shareScoreMedalB": " medallas",
+        "shareScoreMedalC": " medallas",
+        "shareEndMedal": ". ¿Cuántas puedes ganar tú?",
+        "shareBadScoreMedal": "No pude ganar ni una medalla. ¿Tal vez puedas hacerlo mejor?"
+    },
+
+    "pl": {
+        "game-training": "Trening",
+        "game-championship": "Mistrzostwa",
+	    "game-duel": "Pojedynek",
+		
+	    "one-player": "Jeden gracz",
+	    "play-with-friend": "Grać z przyjacielem",
+        "how-to-play": "Jak grać",
+        "start": "Rozpocznij!",
+
+	    "so-close": "Prawie!",
+        "over-time": "Czas\ndodatkowy",
+        "bonus": "Bonus!",
+        "goal": "Gol!",
+		
+	    "points": "Punkty",
+        "result": "Wynik:",
+        
+        "chose-players": "Wybierz reżim",
+		
+        "shareBeginShaiba": "Mi się udało strzelić ",
+        "shareScoreShaibaA": " bramkę",
+        "shareScoreShaibaB": " bramki",
+        "shareScoreShaibaC": " bramek",
+        "shareEndShaiba": ", ile potrafisz ty?",
+	    "shareBadScoreShaiba": "Nie potrafiłam strzelić żadnego gola. Czy możesz to zrobić lepiej?",
+		
+	    "shareBeginMedal": "Mi się udało zebrać ",
+        "shareScoreMedalA": " medal",
+        "shareScoreMedalB": " medale",
+        "shareScoreMedalC": " medali",
+        "shareEndMedal": ", ile potrafisz ty?",
+        "shareBadScoreMedal": "Nie potrafiłam zdobyć żadnego medalu. Czy możesz to zrobić lepiej?"
+
+    }
+    
+}

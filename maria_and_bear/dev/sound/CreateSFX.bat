@@ -1,0 +1,1 @@
+audiosprite --output ..\..\assets\sounds\sfx sources\*.mp3 sources\*.wav
